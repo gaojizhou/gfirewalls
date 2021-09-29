@@ -29,3 +29,6 @@ $ sudo java -version
 # OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.10+9)
 # OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.10+9, mixed mode)
 ```
+## License
+
+See the [LICENSE](LICENSE.md) file for license rights and limitations (GPL-3.0).
