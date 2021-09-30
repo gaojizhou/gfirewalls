@@ -3,17 +3,34 @@ this a simple and easy to use firewall base on ufw.
 
 ### What can it do
 Blocking bots from accessing your public network servers.  
+
+
+### How it work
 Run in terminal like this:
 ```shell
-$ java -jar ./gfirewalls-0.0.1.jar --server.port=8080
+$ java -jar ./gfirewalls-0.0.1.jar --server.port=[GFIREWALLS_PORT]
 ```
-### How it work
+
+At fist gfirewalls will blocking all ip, user visiting this link with browser to add current ip to whitelist.  
+```
+http://[YOUR_LINUX_MACHINE_ADDRESSES]:[GFIREWALLS_PORT]/add_this_ip
+```
+
+or visiting link in terminal like this:
+```shell
+$ curl http://[YOUR_LINUX_MACHINE_ADDRESSES]:[GFIREWALLS_PORT]/add_this_ip
+```
+
 ![how gfirewalls work pic](./introduction/how_gfirewalls_work.jpg)
 
+visiting this link to emptying whitelist:
+```
+http://[YOUR_LINUX_MACHINE_ADDRESSES]:[GFIREWALLS_PORT]/clean
+```
 ### What it needs
 The linux machine you want to protect  
 
-root permissions or sudo permissions  
+Root or sudo permissions
 
 ufw  
 ```shell
@@ -32,8 +49,10 @@ $ sudo java -version
 1. When run in fist time, backup /etc/ufw/user.rules file 
 2. Uninstall and restore /etc/ufw/user.rules file
 3. Check the dependent programs  
+4. Port whitelist  
+5. Some kind of password  
 
-If you want to add some new code, create a pull request or send me an email: gaojizhou![@](./introduction/@.png)qq.com
+If you find bugs or want to add some new code, please create a pull request or send me an email: gaojizhou![@](./introduction/@.png)qq.com
 
 ## License
 
