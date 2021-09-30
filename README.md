@@ -29,6 +29,14 @@ $ sudo java -version
 # OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.10+9)
 # OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.10+9, mixed mode)
 ```
+
+## Todo list
+1. When run in fist time, backup /etc/ufw/user.rules file 
+2. Uninstall and restore /etc/ufw/user.rules file
+3. Check the dependent programs  
+
+If you want to add some new code, create a pull request or send me an email: gaojizhou![@](./introduction/@.png)qq.com
+
 ## License
 
 See the [LICENSE](LICENSE.md) file for license rights and limitations (GPL-3.0).
