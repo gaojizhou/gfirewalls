@@ -2,7 +2,6 @@ package com.gaojizhou.gfirewalls;
 
 import com.gaojizhou.gfirewalls.ufw.IpToolkit;
 import com.gaojizhou.gfirewalls.ufw.UfwIpService;
-import org.apache.logging.log4j.util.Strings;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,9 +47,9 @@ public class GfirewallsApplication {
         return ufwIpService.setIp(ip);
     }
 
-    @GetMapping("clean")
-    public String clean() {
-        return ufwIpService.clean();
+    @GetMapping("/clear")
+    public String clear() {
+        return ufwIpService.clear();
     }
 
 }

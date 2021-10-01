@@ -111,7 +111,7 @@ public class UfwIpService {
             "### END RATE LIMITING ###\n" +
             "COMMIT";
 
-    public String clean() {
+    public String clear() {
         runCmd(Arrays.asList("echo", BASE_USER_RULES, ">", "/etc/ufw/user.rules"));
         return runCmd(Arrays.asList("ufw", "reload"));
     }

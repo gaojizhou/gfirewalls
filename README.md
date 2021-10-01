@@ -25,7 +25,7 @@ $ curl http://[YOUR_LINUX_MACHINE_ADDRESSES]:[GFIREWALLS_PORT]/add_this_ip
 
 visiting this link to emptying whitelist:
 ```
-http://[YOUR_LINUX_MACHINE_ADDRESSES]:[GFIREWALLS_PORT]/clean
+http://[YOUR_LINUX_MACHINE_ADDRESSES]:[GFIREWALLS_PORT]/clear
 ```
 ### What it needs
 The linux machine you want to protect  
