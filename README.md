@@ -1,5 +1,5 @@
 # gfirewalls
-this a simple and easy to use firewall base on ufw.  
+A simple and easy to use firewall tool base on ufw.  
 
 ### What can it do
 Blocking bots from accessing your public network servers.  
