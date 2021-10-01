@@ -8,7 +8,7 @@ Blocking bots from accessing your public network servers.
 ### How it work
 Run in terminal like this:
 ```shell
-$ sudo java -jar ./gfirewalls-0.0.1.jar --server.port=[GFIREWALLS_PORT]
+$ sudo java -jar ./gfirewalls.jar --server.port=[GFIREWALLS_PORT]
 ```
 
 At fist gfirewalls will blocking all ip, user visiting this link with browser to add current ip to whitelist.  
