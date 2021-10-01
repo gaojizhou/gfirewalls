@@ -47,7 +47,7 @@ public class UfwIpService {
     public String runCmd(List<String> cmdAfterBase) {
         // command list
         String[] cmd = Stream.of(cmdAfterBase).flatMap(Collection::stream).distinct().toArray(String[]::new);
-
+        System.out.println("running command: " +  String.join(" ", cmd));
         try {
             Process ps = Runtime.getRuntime().exec(cmd);
             ps.waitFor();
@@ -68,7 +68,7 @@ public class UfwIpService {
             e.printStackTrace();
         }
 
-        return null;
+        return "run cmd error";
     }
 
 
