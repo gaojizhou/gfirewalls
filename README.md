@@ -51,6 +51,7 @@ $ sudo java -version
 3. Check the dependent programs  
 4. Port whitelist  
 5. Some kind of password  
+6. IPv6 support
 
 If you find bugs or want to add some new code, please create a pull request or send me an email: gaojizhou![@](./introduction/@.png)qq.com
 
