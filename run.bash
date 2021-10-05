@@ -16,11 +16,11 @@ else
 fi
 
 # check java
-if command -v java >/dev/null 2>&1; then 
-  echo 'run java -version, gfirewalls need java 11'
-  java -version
+if command -v /usr/bin/java >/dev/null 2>&1; then 
+  echo 'run java -version, gfirewalls need java 11 in /usr/bin/java'
+  /usr/bin/java -version
 else 
-  echo 'java no exists, please install java 11 for root user'
+  echo '/usr/bin/java no exists, please install java 11 to /usr/bin/java'
   exit 1
 fi
 
@@ -46,7 +46,32 @@ NOW=`date +'%Y%m%d_%H-%M-%S'`
 cp /etc/ufw/user.rules $DIR_NAME/user.rules.$NOW.backup
 cp /etc/ufw/user6.rules $DIR_NAME/user.user6.$NOW.backup
 
-# run jar
-cp ./target/gfirewalls.jar $DIR_NAME
+NAME=gfirewalls
+SERVICE_NAME=$NAME.service
+# stop running
+systemctl stop $SERVICE_NAME
 
-java -jar $DIR_NAME/gfirewalls.jar --server.port=$PORT
+cp ./target/gfirewalls.jar $DIR_NAME
+START_COMMAND="/usr/bin/java -jar $DIR_NAME/gfirewalls.jar --server.port=$PORT"
+
+SER_STR="[Unit]
+Description=$NAME Server Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+RuntimeMaxSec=86400
+Restart=on-failure
+RestartSec=5s
+ExecStart=$START_COMMAND
+
+[Install]
+WantedBy=multi-user.target"
+
+printf '%s\n' "$SER_STR" > /etc/systemd/system/$SERVICE_NAME
+
+systemctl daemon-reload
+systemctl start $SERVICE_NAME
+systemctl enable $SERVICE_NAME
+systemctl status $SERVICE_NAME
