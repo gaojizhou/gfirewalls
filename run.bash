@@ -75,3 +75,6 @@ systemctl daemon-reload
 systemctl start $SERVICE_NAME
 systemctl enable $SERVICE_NAME
 systemctl status $SERVICE_NAME
+
+echo "please visiting this link to initialization gfirewalls"
+echo "http://[YOUR_LINUX_MACHINE_ADDRESSES]:$PORT/init_config"

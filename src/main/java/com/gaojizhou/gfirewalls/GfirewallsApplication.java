@@ -52,4 +52,10 @@ public class GfirewallsApplication {
         return ufwIpService.clear();
     }
 
+    @GetMapping("/init_config")
+    public String initConfig() {
+        return "click /clear to blocking all ip: <a href='/clear' target='view_window'>/clear</a></br>" +
+               "ssh or other server maybe disconnecting sessions</br>" +
+               "click /add_this_ip add your ip to whitelist: <a href='/add_this_ip' target='view_window'>/add_this_ip</a></br>";
+    }
 }
