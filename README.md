@@ -6,9 +6,12 @@ Blocking bots from accessing your public network servers.
 
 
 ### How it work
+Go to [releases page](https://github.com/gaojizhou/gfirewalls/releases) and download releases file gfirewalls.tar.  
 Run in terminal like this:
 ```shell
-$ sudo java -jar ./gfirewalls.jar --server.port=[GFIREWALLS_PORT]
+$ tar -xvf ./gfirewalls.tar
+$ cd ./gfirewalls
+$ sudo bash ./run.bash
 ```
 
 At fist gfirewalls will blocking all ip, user visiting this link with browser to add current ip to whitelist.  
