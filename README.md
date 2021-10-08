@@ -38,7 +38,7 @@ $ sudo ufw status
 
 # Status active
 ```
-java11  
+java 11  
 ```shell
 $ sudo java -version
 
@@ -46,12 +46,13 @@ $ sudo java -version
 ```
 
 ## Todo list
-1. When run in fist time, backup /etc/ufw/user.rules file 
-2. Uninstall and restore /etc/ufw/user.rules file
-3. Check the dependent programs  
+1. When run in fist time, backup /etc/ufw/user.rules file ✅  
+2. Uninstall and restore /etc/ufw/user.rules file  
+3. Check the dependent programs ✅  
 4. Port whitelist  
 5. Some kind of password  
-6. IPv6 support
+6. IPv6 support  
+7. Default gfirewalls port ✅  
 
 If you find bugs or want to add some new code, please create a pull request or send me an email: gaojizhou![@](./introduction/@.png)qq.com
 

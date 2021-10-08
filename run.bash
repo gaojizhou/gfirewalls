@@ -24,12 +24,21 @@ else
   exit 1
 fi
 
-read -p "select gfirewalls potr (1000-9999): " PORT
+echo "select a gfirewalls potr"
+read -p "please input number between 1000 to 9999 (default 7893): " PORT
 until
-[ $PORT -gt 999 -a $PORT -lt 10000 ]
+[[ ! $PORT ]] || [[ $PORT -ge 1000 && $PORT -le 9999 ]]
 do
-read -p "$PORT value error, please enter number between 1000 to 9999: " PORT
+echo "port value error: $PORT"
+read -p "please input number between 1000 to 9999 (default 7893): " PORT
 done
+
+if [ ! $PORT ]; then  
+  PORT='7893'  
+  echo "select default port: $PORT"
+else
+  echo "gfirewalls port: $PORT"
+fi  
 
 # gfirewalls dir
 DIR_NAME=/root/.gfirewalls
