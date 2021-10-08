@@ -8,8 +8,7 @@ fi
 
 # check ufw
 if command -v ufw >/dev/null 2>&1; then 
-  echo 'run ufw enable'
-  # ufw enable
+  echo 'ufw check'
 else 
   echo 'ufw no exists, maybe you can install ufw like this: sudo apt install ufw'
   exit 1
@@ -105,3 +104,4 @@ systemctl status $SERVICE_NAME
 
 echo "please visiting this link to initialization gfirewalls"
 echo "http://[YOUR_LINUX_MACHINE_ADDRESSES]:$PORT/init_config"
+ufw enable
