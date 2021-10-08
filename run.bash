@@ -60,7 +60,25 @@ SERVICE_NAME=$NAME.service
 # stop running
 systemctl stop $SERVICE_NAME
 
-cp ./target/gfirewalls.jar $DIR_NAME
+if [ ! -d "./introduction"]; then
+  # in git path now
+  if [[ -d "./target" ]] && [[ -f "./target/gfirewalls.jar" ]]; then
+    cp ./target/gfirewalls.jar $DIR_NAME
+  else
+    echo "can't find jar file ./target/gfirewalls.jar"
+    echo "you can package jar file like this: mvn package"
+    exit 1
+  fi
+else
+  # in releases path now
+  if [ -f "./gfirewalls.jar" ]; then
+    cp ./gfirewalls.jar $DIR_NAME
+  else
+    echo "can't find jar file ./gfirewalls.jar"
+    exit 1
+  fi
+fi
+
 START_COMMAND="/usr/bin/java -jar $DIR_NAME/gfirewalls.jar --server.port=$PORT"
 
 SER_STR="[Unit]
