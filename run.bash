@@ -9,7 +9,7 @@ fi
 # check ufw
 if command -v ufw >/dev/null 2>&1; then 
   echo 'run ufw enable'
-  ufw enable
+  # ufw enable
 else 
   echo 'ufw no exists, maybe you can install ufw like this: sudo apt install ufw'
   exit 1
@@ -60,7 +60,7 @@ SERVICE_NAME=$NAME.service
 # stop running
 systemctl stop $SERVICE_NAME
 
-if [ ! -d "./introduction"]; then
+if [ -d "./introduction" ]; then
   # in git path now
   if [[ -d "./target" ]] && [[ -f "./target/gfirewalls.jar" ]]; then
     cp ./target/gfirewalls.jar $DIR_NAME
