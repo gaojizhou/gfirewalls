@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.gaojizhou</groupId>
 	<artifactId>gfirewalls</artifactId>
-	<version>0.0.1</version>
+	<version>1.0.2</version>
 	<name>gfirewalls</name>
 	<description>A firewall simple and easy to use</description>
 	<properties>

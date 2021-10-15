@@ -27,17 +27,20 @@ public class UfwIpService {
     }
 
     public String setIp(String ip) {
+        if (ip == null || ip.length() == 0) {
+            return "empty ip";
+        }
         String result = runCmd(Arrays.asList("ufw", "allow", "from",
                 ip, "to", "any", "port", "1:39000", "proto",
                 "tcp"));
         if (result.contains("已经存在")) {
-            return result;
+            return result + " your ip is " + ip;
         }
         runCmd(Arrays.asList("ufw", "allow", "from",
                 ip, "to", "any", "port", "1:39000", "proto",
                 "udp"));
         String reload = runCmd(Arrays.asList("ufw", "reload"));
-        return reload;
+        return reload + " your ip is " + ip;
     }
 
     public String runCmd(String cmd) {
