@@ -61,4 +61,4 @@ If you find bugs or want to add some new code, please create a pull request or s
 
 ## License
 
-See the [LICENSE](LICENSE.md) file for license rights and limitations (GPL-3.0).
+See the [LICENSE](https://raw.githubusercontent.com/gaojizhou/gfirewalls/master/LICENSE) file for license rights and limitations (GPL-3.0).
