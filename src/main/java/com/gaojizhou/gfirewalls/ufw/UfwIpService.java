@@ -28,7 +28,9 @@ public class UfwIpService {
 
     public String setIp(String ip) {
         if (ip == null || ip.length() == 0) {
-            return "empty ip";
+            return "sorry, gfirewalls cannot recognize your ip</br>" +
+            "you can manual add your ip like this: </br>" +
+            "<a href='/add_other_ip?ip=' target='view_window'>add_other_ip?ip={your ip}</a></br>";
         }
         String result = runCmd(Arrays.asList("ufw", "allow", "from",
                 ip, "to", "any", "port", "1:39000", "proto",
