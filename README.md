@@ -11,7 +11,7 @@ Run in terminal like this:
 ```shell
 $ tar -xvf ./gfirewalls.tar
 $ cd ./gfirewalls
-$ sudo bash ./run.bash
+$ sudo bash ./run.sh
 ```
 
 At fist gfirewalls will blocking all ip, user visiting this link with browser to add current ip to whitelist.  
