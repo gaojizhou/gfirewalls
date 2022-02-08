@@ -48,8 +48,10 @@ public class GfirewallsApplication {
     }
 
     @GetMapping("/clear")
-    public String clear() {
-        return ufwIpService.clear();
+    public String clear(HttpServletRequest request) {
+        String ip = IpToolkit.getIpAddr(request);
+        ufwIpService.clear();
+        return ufwIpService.setIp(ip);
     }
 
     @GetMapping("/init_config")
