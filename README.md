@@ -19,7 +19,7 @@ At fist gfirewalls will blocking all ip, user visiting this link with browser to
 http://[YOUR_LINUX_MACHINE_ADDRESSES]:[GFIREWALLS_PORT]/add_this_ip
 ```
 
-or visiting link in terminal like this:
+Or visiting link in terminal like this:
 ```shell
 $ curl http://[YOUR_LINUX_MACHINE_ADDRESSES]:[GFIREWALLS_PORT]/add_this_ip
 ```
